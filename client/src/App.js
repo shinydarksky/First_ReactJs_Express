@@ -8,7 +8,12 @@ class App extends React.Component{
   }
   componentDidMount(){
     axios.get('/api/helloworld')
-      .then(result => this.setState({greating:result.data.sayHi}))
+      .then(result => {
+        this.setState({greating:result.data.sayHi})
+        this.text = this.state.greating
+      })
+    axios.get('/api/helloworld2')
+      .then(result => this.setState({greating:this.text+result.data.sayHi}))
   }
   render(){
     return (

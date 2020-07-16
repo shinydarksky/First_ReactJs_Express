@@ -7,8 +7,12 @@ app.get('/', (req, res) => {
 })
 
 app.get('/api/helloworld', (req, res) => {
-  res.json({sayHi: 'hello from server, nice to meet you!'})
+  res.json({sayHi: 'Nội dung của server 1'})
 })
+
+app.get('/api/helloworld2', (req, res) => {
+   res.json({sayHi: 'Nội dung của server 2 '})
+ })
 
 app.listen(5000, () => {
    console.log('App listening on port 5000')
